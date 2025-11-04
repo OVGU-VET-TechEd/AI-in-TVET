@@ -1,0 +1,924 @@
+<!--
+author:   UNESCO AI Foundations Course
+email:    
+version:  1.0.0
+language: en
+narrator: US English Female
+
+comment:  A UNESCO-Aligned Introduction to AI Literacy and Practice - This course introduces core concepts, ethics, and practical applications of Artificial Intelligence through hands-on experimentation and reflection.
+
+icon: https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/UNESCO_logo.svg/200px-UNESCO_logo.svg.png
+
+-->
+
+# Foundations of Artificial Intelligence
+
+**A UNESCO-Aligned Introduction to AI Literacy and Practice**
+
+🎓 Welcome to AI Foundations!
+
+This course introduces you to the core concepts, ethics, and practical applications of Artificial Intelligence. You'll learn by doing – experimenting with real AI tools, analyzing data, and reflecting on the impact of AI on society and education.
+
+## 🎯 Learning Goals
+
+By the end of this course, you will be able to:
+
+* ✅ Define what Artificial Intelligence (AI) is and describe its main components
+* ✅ Explain the role of data, algorithms, weights, and models
+* ✅ Identify applications of AI in daily life and education
+* ✅ Experiment with simple AI systems and understand their limitations
+* ✅ Reflect on ethical issues of AI use including bias, fairness, and transparency
+* ✅ Create and train small, purpose-built AIs using accessible tools
+
+## 🧩 Course Structure
+
+This course consists of 12 sessions organized into key themes:
+
+| Session | Topic | Focus | Duration |
+|---------|-------|-------|----------|
+| 1 | What is AI? | Basic Concepts | 10 min |
+| 2 | How AI Works | Data, Algorithms, Models | 15 min |
+| 3 | Types of AI | Symbolic, Predictive, Generative | 10 min |
+| 4 | Data & Algorithms | Understanding data, bias | 15 min |
+| 5 | Neural Networks | Weights, training, accuracy | 15 min |
+| 6 | Ethics in AI | Fairness, privacy, transparency | 15 min |
+| 7 | AI Tools in Daily Life | Use cases | 10 min |
+| 8 | Interactive Session 1 | Training Your First AI | 15 min |
+| 9 | Interactive Session 2 | Data Bias Explorer | 15 min |
+| 10 | Interactive Session 3 | AI Ethics Simulator | 15 min |
+| 11 | Mini Project | Build your own AI | 20 min |
+| 12 | Reflection & Future Skills | AI literacy wrap-up | 10 min |
+
+# 1️⃣ What Is Artificial Intelligence?
+
+**UNESCO 2025 Definition:**
+
+> Artificial Intelligence (AI) refers to computer systems that can perform tasks normally requiring human intelligence – such as understanding language, recognizing images, learning from data, or making decisions.
+
+**Simplified Formula:**
+
+```
+AI = Machine + Data + Algorithm + Feedback Loop
+```
+
+## 🧠 Core Components
+
+```ascii
+┌─────────────┐
+│    DATA     │  ← Input: Images, text, numbers
+└──────┬──────┘
+       │
+       ▼
+┌─────────────┐
+│  ALGORITHM  │  ← Process: Learn patterns
+└──────┬──────┘
+       │
+       ▼
+┌─────────────┐
+│    MODEL    │  ← Output: Predictions
+└──────┬──────┘
+       │
+       ▼
+┌─────────────┐
+│  FEEDBACK   │  ← Improve: Adjust weights
+└─────────────┘
+```
+
+## 💬 Reflection Question
+
+**Where do you already encounter AI in your daily life?**
+
+* Voice assistants (Siri, Alexa)
+* Translation tools (Google Translate)
+* Recommendation systems (Netflix, Spotify)
+* Social media feeds (Instagram, TikTok)
+* Adaptive learning platforms (e.g. Duolingo, smart tutoring systems)
+
+## ✅ Quick Check
+
+Which statement is TRUE about AI?
+
+[( )] AI is a single program with human-level intelligence
+[(X)] AI is a collection of methods that mimic aspects of intelligence
+[( )] AI can think and feel like humans
+[( )] AI works without data
+
+# 2️⃣ How AI Works: The Learning Process
+
+AI systems learn patterns from examples using data and algorithms.
+
+## 📊 Core Components Explained
+
+| Component | Definition | Example |
+|-----------|------------|---------|
+| Data | Information used to train the model | Photos of cats & dogs |
+| Algorithm | Step-by-step learning process | Gradient descent (learning by gradually reducing errors) |
+| Model | The trained system that makes predictions | Image classifier |
+| Weights | Numbers adjusted during training | "Feature importance" values |
+| Training | Process of updating weights | Learning phase |
+| Testing | Checking performance on new data | Validation phase |
+
+## 🔄 The Training Loop
+
+```python
+# Simplified AI Training Process
+for epoch in range(100):
+    prediction = model.predict(input_data)
+    error = calculate_error(prediction, true_label)
+    model.update_weights(error)  # Learn from mistakes!
+```
+
+## 🎯 Example: Training an Image Classifier
+
+**Scenario:** You want to create an AI that distinguishes cats 🐱 from dogs 🐶.
+
+1. **Collect data** → 1000 labeled images (500 cats, 500 dogs)
+2. **Train model** → Show images; adjust weights based on mistakes
+3. **Test model** → Try with 200 new images
+4. **Measure accuracy** → Calculate % of correct predictions
+
+> **Key Insight:** The algorithm changes weights to minimize error. Over time, the model improves its predictions as it sees more examples and adjusts based on feedback.
+
+# 3️⃣ Types of AI
+
+## 🗂️ Three Main Categories
+
+### 🎲 Symbolic AI
+**Rule-Based Systems**
+
+* Follows explicit rules (if-then logic)
+* Uses logic and reasoning
+* **Example:** Chess programs (rules + search)
+
+### 📈 Predictive AI
+**Pattern Recognition**
+
+* Learns from historical data (machine learning)
+* Makes predictions or classifications
+* **Example:** Weather forecasting (uses past data trends)
+
+### ✨ Generative AI
+**Content Creation**
+
+* Creates new content (text, images, music)
+* Uses neural networks (often large models)
+* **Example:** ChatGPT (writes text), DALL·E (creates images)
+
+## 🤔 Discussion Question
+
+Which type of AI do you interact with most often in your daily life? Why?
+
+[[___________________________________]]
+
+# 4️⃣ Data and Bias
+
+⚠️ **Critical Insight:** AI models inherit biases from their training data.
+
+> **Bias in, bias out**
+
+## 🔍 Understanding Bias
+
+**What is Bias in AI?**
+
+* Systematic errors in AI predictions
+* Often reflects societal prejudices (e.g. gender or racial bias)
+* Can lead to unfair or discriminatory outcomes (O'Neil, 2016; Noble, 2018)
+
+## 📌 Real-World Examples of AI Bias
+
+### Facial Recognition
+
+Trained mostly on light-skinned faces – higher error rates for people with darker skin (Buolamwini & Gebru, 2018).
+
+### Language Models
+
+Trained on internet text – may reproduce stereotypes or offensive language.
+
+### Hiring Algorithms
+
+Trained on past hiring data – can discriminate against underrepresented groups (e.g., Amazon's recruiting AI preferred male candidates).
+
+## 🎯 Group Activity
+
+**Task:** Identify potential biases in educational AI systems.
+
+* What if a learning analytics system was trained only on data from high-performing students?
+* How might language barriers affect AI tutoring systems?
+* Could cultural differences impact AI-based assessment tools?
+
+**Discuss with your group and share 2-3 key insights:**
+
+[[_________________________________________]]
+
+# 5️⃣ Neural Networks: How Machines Learn
+
+## 🧠 Brain-Inspired Computing
+
+A neural network mimics the brain with interconnected layers of nodes (artificial neurons).
+
+```ascii
+INPUT LAYER    HIDDEN LAYERS         OUTPUT LAYER
+    
+    O              O                
+   / \            /|\                  O  (Cat)
+  O   O    →  →  O O O    →  →        /
+ / \ / \          \|/                 O  (Dog)
+O   O   O           O                
+```
+
+* **Input Layer:** Receives data (e.g. pixel values of an image)
+* **Hidden Layers:** Process information, detect patterns (each connection has a weight)
+* **Output Layer:** Produces a prediction (e.g. "Cat" or "Dog")
+* **Training:** Adjusts weights to reduce errors on known examples
+* **Accuracy:** Measures how often the model is correct on new data
+
+## ⚙️ Simple Training Visualization
+
+```javascript
+// Pseudo-code for weight update in one training step
+let weights = [0.5, 0.3, 0.2];
+let learningRate = 0.01;
+
+function train(input, expectedOutput) {
+  let prediction = model.predict(input, weights);
+  let error = expectedOutput - prediction;
+  
+  // Update each weight based on its contribution to error
+  weights = weights.map((w, i) => 
+    w + learningRate * error * input[i]
+  );
+  
+  return error;
+}
+```
+
+> Above: an illustration of how weights might be adjusted in a simple neural network training step.
+
+# 6️⃣ Ethics in AI
+
+## ⚖️ Key Ethical Principles
+
+**Source:** UNESCO (2021) Recommendation on AI Ethics
+
+1. **Human Rights & Human Dignity** – AI should respect fundamental rights and freedoms
+
+2. **Fairness & Non-Discrimination** – Avoid perpetuating biases; promote equity and inclusion
+
+3. **Transparency & Explainability** – Users should understand how an AI makes decisions (no "black boxes")
+
+4. **Privacy & Data Protection** – Safeguard personal information; ensure consent and security
+
+5. **Human Agency & Oversight** – AI should augment, not replace, human decision-making; humans remain ultimately accountable
+
+> These principles align with the first global agreement on AI ethics adopted by UNESCO in Nov 2021.
+
+## 🎭 Ethical Dilemmas
+
+### Scenario 1: Predictive Policing
+
+AI predicts crime hotspots to allocate police patrols.
+
+* ✅ **Pro:** May optimize resource use and potentially deter crime
+* ❌ **Con:** May reinforce discrimination if based on biased historical data (e.g., over-policing certain neighborhoods)
+
+### Scenario 2: Automated Grading
+
+AI system grades student essays automatically.
+
+* ✅ **Pro:** Provides quick, consistent feedback at scale
+* ❌ **Con:** May miss nuances (creativity, context) and could be biased against non-native English writers or unconventional answers
+
+## 💭 Reflection
+
+What ethical concerns do you have about AI in education?
+
+[[_________________________________________]]
+
+*(E.g., fairness in automated scoring, student privacy with AI tools, transparency of AI-driven recommendations in e-learning.)*
+
+# 7️⃣ AI Tools in Daily Life
+
+## 🔧 Common AI Applications
+
+| Category | Examples | How It Works |
+|----------|----------|--------------|
+| Virtual Assistants | Siri, Alexa, Google Assistant | Speech recognition + NLP (understand and respond to voice) |
+| Recommendations | Netflix, Spotify, Amazon | Collaborative filtering (learns your preferences) |
+| Translation | Google Translate, DeepL | Neural machine translation (sequence-to-sequence models) |
+| Navigation | Google Maps, Waze | Route optimization (AI predicts traffic) |
+| Photo Editing | Face filters, Auto-enhance | Computer vision (detects features, applies effects) |
+| Writing Aids | Grammarly, ChatGPT | Language models (grammar rules + AI prediction for text) |
+
+## 📱 Exercise
+
+Choose one AI tool you use regularly:
+
+1. What problem does it solve or task does it assist with?
+2. What data does it use to function?
+3. How might it contain or be affected by bias?
+
+[[_________________________________________]]
+
+*(For example, a music recommendation app uses your listening history (data) and might have genre biases based on the majority user base.)*
+
+# 🎓 Interactive Session 1: Training Your First AI
+
+**Duration:** 15 minutes
+
+## 🎯 Learning Objectives
+
+* Experience training a machine learning model hands-on
+* Understand how data quality affects AI performance
+* Appreciate the iterative nature of improving AI models
+
+## 🛠️ Tool: Teachable Machine
+
+We'll use Google's Teachable Machine – a no-code platform for training simple AI models.
+
+🔗 **Link:** [teachablemachine.withgoogle.com](https://teachablemachine.withgoogle.com) (free, works in a browser)
+
+## 📋 Step-by-Step Guide
+
+### Step 1: Choose Your Project (2 min)
+
+Select ONE option:
+
+- [ ] **Image Classification:** Smile Detection (Happy vs. Neutral faces)
+- [ ] **Sound Classification:** Voice Detection (Your voice vs. Background noise)
+- [ ] **Pose Classification:** Gesture Recognition (Hand raised vs. Hand down)
+
+### Step 2: Collect Training Data (5 min)
+
+**For Image Project (Smile Detection) for example:**
+
+1. Create 2 classes in Teachable Machine: Class 1 and Class 2
+2. Rename them (e.g., "Smiling", "Neutral")
+3. Use your webcam to capture 30–50 samples per class
+4. Include diverse examples (different angles, lighting conditions, with/without glasses, etc.)
+5. Ensure clear, unambiguous images for each class
+
+**Quality tips:**
+
+* ✅ Use diverse examples to generalize better
+* ✅ Make sure each class has similar number of examples
+* ❌ Avoid blurry or inconsistent images
+* ❌ Don't include the wrong class in a class's images (no mixed labels)
+
+### Step 3: Train Your Model (2 min)
+
+1. Click "Train Model" in Teachable Machine
+2. Wait for the training process to complete (it might take ~30 seconds)
+3. Watch the progress bar – this is the AI learning from your images by adjusting internal weights!
+
+### Step 4: Test & Evaluate (3 min)
+
+Use the live preview to test your model with new inputs:
+
+* Try smiling vs. not smiling (or the equivalent for your project)
+* Test edge cases: partial smile, hand partially raised, background noise, etc.
+* Observe the model's predictions/confidence. Does it correctly distinguish the classes?
+* Try scenarios it might confuse: e.g., for smile detection, cover part of your face or change lighting
+
+### Step 5: Improve & Iterate (3 min)
+
+1. Identify where the model struggled. Did it misclassify certain instances?
+2. Add more training examples for those tricky cases (or adjust existing ones)
+3. Retrain the model
+4. Test again – did the accuracy improve after addressing the gaps?
+
+> Often, more diverse data or more training helps.
+
+## 📊 Reflection Questions
+
+After completing the exercise, discuss:
+
+### Data Quality
+
+How did the amount and diversity of training data affect your model's accuracy?
+
+[[_________________________________________]]
+
+*(Did adding more examples or variety improve results?)*
+
+### Limitations
+
+What situations does your AI still struggle with, and why do you think that is?
+
+[[_________________________________________]]
+
+*(E.g., poor lighting, unusual inputs, etc.)*
+
+### Real-World Application
+
+Where could this type of simple AI be useful? What ethical or practical concerns might arise in that context?
+
+[[_________________________________________]]
+
+*(E.g., a smile detector for unlocking phones – issues: lighting, fairness, privacy)*
+
+## 🎁 Bonus Challenge
+
+**Export & Share:**
+
+1. Export your trained model (Teachable Machine allows you to download the model files or host it online)
+2. Swap models with a classmate and test each other's model on your own inputs
+3. Discuss: Why might two models trained for the same task perform differently?
+
+*(Hint: differences in training data collection, amount of data, etc.)*
+
+## 📚 Key Takeaways
+
+* ✅ AI requires lots of diverse training data
+* ✅ Models often need iterative improvement – the first version is rarely perfect
+* ✅ Testing reveals limitations you didn't anticipate
+* ✅ Your choices (especially in data collection) directly shape your AI's behavior
+
+# 🔎 Interactive Session 2: Data Bias Explorer
+
+**Duration:** 15 minutes
+
+## 🎯 Learning Objectives
+
+* See first-hand how biased data leads to biased AI outcomes
+* Identify sources of bias in datasets
+* Brainstorm strategies to mitigate bias in AI systems
+
+## 🧪 Activity: Simulated Hiring Algorithm
+
+**Scenario:**
+
+You are testing an AI hiring tool for a tech company. The AI was trained on historical hiring data from the past 10 years. We want to explore how the training data might be influencing its decisions, and whether it has bias.
+
+## 📊 The Dataset
+
+Here is an overview of the training data that the AI learned from:
+
+| Candidate Group | Number of Applicants in Data | Percentage Hired (%) |
+|-----------------|------------------------------|----------------------|
+| Male, Engineering degree | 500 | 80% hired |
+| Female, Engineering degree | 100 | 60% hired |
+| Male, Non-engineering degree | 200 | 30% hired |
+| Female, Non-engineering degree | 50 | 20% hired |
+
+> **Observation:** The dataset is heavily skewed toward male applicants, and past hiring favored those candidates – a potential source of bias.
+
+## 🎮 Interactive Simulation
+
+Now, let's simulate how this AI evaluates new candidates:
+
+### New Candidate Applications:
+
+**Candidate A:**
+
+* Gender: Female
+* Degree: Engineering
+* Experience: 5 years
+* Skills Match: 90%
+
+AI Prediction: [[ ]] *(predicted hiring score 0–100)*
+
+**Candidate B:**
+
+* Gender: Male
+* Degree: Engineering
+* Experience: 5 years
+* Skills Match: 90%
+
+AI Prediction: [[ ]] *(predicted hiring score 0–100)*
+
+*(Fill in what you think the AI's scores would be. Does it favor one over the other? Why?)*
+
+## 🤔 Analysis Questions
+
+### Pattern Recognition
+
+What patterns might the AI have learned from the historical data that influence its decisions?
+
+[[_________________________________________]]
+
+*(Hint: Which group does it "think" is more likely to be hired?)*
+
+### Bias Identification
+
+What biases can you identify in this AI system? List at least 3.
+
+[[_________________________________________]]
+
+*(E.g., gender bias favoring men, degree bias favoring engineering, etc.)*
+
+### Root Causes
+
+Where did these biases originate from?
+
+[( )] The algorithm was explicitly programmed to prefer men
+[(X)] The training data reflected past discrimination
+[( )] The AI spontaneously developed biases on its own
+[(X)] Human decisions in the past (who got hired) were biased, and the AI learned that pattern
+
+## 🛠️ Bias Mitigation Exercise
+
+**Your Task:** How would you fix or reduce bias in this AI?
+
+Consider these strategies and rank them from most effective (1) to least effective (5):
+
+- [ ] Collect more balanced training data (e.g., include more female applicants)
+- [ ] Add fairness constraints to the algorithm (tell it to ignore gender)
+- [ ] Remove gender information from the inputs
+- [ ] Audit the AI's recommendations for bias (and adjust as needed)
+- [ ] Ensure human review of all AI hiring recommendations
+
+### Discussion:
+
+For each strategy, discuss pros and cons. For example:
+
+* Balancing data can improve fairness but might be hard if historical data is limited
+* Removing gender might help, but the model could still infer gender indirectly from other data
+* Human review provides oversight but could reintroduce human biases
+
+[[_________________________________________]]
+
+## 🌍 Real-World Cases
+
+### Case Study 1: Amazon's Hiring AI (2018)
+
+Amazon developed an AI to screen resumes, but it learned to prefer male candidates (because past data was mostly male). It even penalized resumes containing the word "women's" (e.g. "women's chess club"). Once this bias was discovered, Amazon scrapped the system (Dastin, 2018).
+
+### Case Study 2: Facial Recognition Bias
+
+A study by Joy Buolamwini and Timnit Gebru at MIT Media Lab found that commercial facial recognition systems had error rates below 1% for classifying light-skinned men, but as high as 34% for dark-skinned women. The AI performed worst for those it had seen least and learned biases present in training data (Buolamwini & Gebru, 2018). This highlighted the need for more diverse training data and fairness checks in AI systems.
+
+## 🔍 Reflection
+
+### Personal Connection
+
+Think about your own school or community:
+
+* What datasets (collections of information) exist that might contain biases? (For example, school discipline records, grading data, yearbook photos, etc.)
+* If an AI were trained on those, how might it produce unfair or harmful outcomes?
+* What steps could we take to prevent or mitigate those issues?
+
+[[_________________________________________]]
+
+## 🎯 Key Takeaways
+
+* ✅ Bias in → Bias out: AI will learn and propagate biases present in its training data
+* ✅ Historical data can encode past inequalities – without intervention, AI may reinforce them
+* ✅ There are multiple strategies to mitigate AI bias (improving data, algorithm tweaks, human oversight), and often a combination is best
+* ✅ Human oversight remains essential – AI alone shouldn't make high-stakes decisions without checks
+
+# ⚖️ Interactive Session 3: AI Ethics Simulator
+
+**Duration:** 15 minutes
+
+## 🎯 Learning Objectives
+
+* Analyze real-world inspired ethical dilemmas in AI use
+* Apply UNESCO's AI ethics principles to make decisions
+* Develop your ability to reason about consequences of AI in society
+
+## 🎭 Format: Role-Playing Scenarios
+
+We will explore scenarios where an AI is used in a sensitive context. For each scenario, assume a role and make a decision, then reflect on the ethical implications.
+
+## 📱 Scenario 1: School Surveillance AI
+
+### Context
+
+A school is considering AI-powered cameras that:
+
+* Detect if students skip class (by recognizing faces in hallways)
+* Monitor "concerning behavior" (fights, bullying) and alert administrators automatically
+
+### Stakeholder Roles
+
+* **Principal:** Focused on school safety and attendance
+* **Student:** Values privacy and fears being misidentified as misbehaving
+* **Parent:** Wants their child safe, but also respected
+* **Teacher:** Worried that constant surveillance might erode trust
+
+### 🤔 Decision Point
+
+During a pilot, the AI frequently flags neurodivergent students (who may behave atypically) as "concerning." This leads to false alarms. As a decision-making committee, what should the school do?
+
+**A)** Continue using the system as is, but add human review for each alert
+
+**B)** Disable the behavioral detection feature (due to too many false alarms), but still use it for attendance only
+
+**C)** Remove the AI system entirely; the risks outweigh the benefits
+
+**D)** Pause and retrain the AI with better, more diverse data (including neurodivergent students' behaviors) to improve accuracy
+
+Your Choice: [[ ]] *(A, B, C, or D)*
+
+Reasoning: [[_________________________________________]]
+
+### 📊 Ethical Analysis
+
+Consider how each option aligns with ethical principles:
+
+* **Human Rights & Dignity:** Does the AI respect all students' rights? (False accusations can violate dignity.)
+* **Fairness:** Is the system fair to all groups of students? (Right now, it isn't.)
+* **Transparency:** Do stakeholders know how decisions/alerts are being made?
+* **Privacy:** Are we compromising privacy with constant monitoring?
+
+Fill in how your decision addresses these principles:
+
+| Principle | How does your chosen option address it? |
+|-----------|----------------------------------------|
+| Human Rights | [[ ]] |
+| Fairness | [[ ]] |
+| Transparency | [[ ]] |
+| Privacy | [[ ]] |
+
+## 📚 Scenario 2: AI Essay Grading
+
+### Context
+
+A university uses an AI system to grade all student essays in large classes. The AI was trained on thousands of past essays graded by professors and can provide results in minutes.
+
+### Situation
+
+It is discovered that essays written by non-native English speakers consistently receive lower AI scores, even when the content and arguments are strong. The AI seems to favor a particular writing style (likely reflected in its training data).
+
+### ⚖️ Ethical Questions
+
+**Fairness:** Is this AI grading system fair? Why or why not?
+
+[[_________________________________________]]
+
+*(Think about students who might be disadvantaged and whether the grading criteria are biased.)*
+
+**Accountability:** Who is responsible if a student's grade is unfairly affected by the AI?
+
+[( )] The AI company that built the system
+[(X)] The university that decided to use it
+[(X)] The professor who relies on it for grading
+[( )] The student (for not writing in a style the AI prefers)
+
+**Next Steps:** What changes would you recommend for this AI grading system?
+
+[[_________________________________________]]
+
+*(E.g., use AI as a supportive tool rather than final judge, adjust the model, provide an option for human re-grading, etc.)*
+
+## 🏥 Scenario 3: Healthcare Appointment AI
+
+### Context
+
+A hospital uses an AI to predict which patients are likely to miss their appointments. "High-risk" patients get extra reminder calls and follow-ups. The goal is to reduce no-shows (missed appointments).
+
+### Observation
+
+Most patients flagged as "high risk" by the AI are from low-income neighborhoods. Staff notice these patients are being treated with more suspicion (e.g., stricter policies like deposits) because the AI label influences expectations.
+
+### 🗣️ Group Discussion
+
+Discuss the following:
+
+**Accuracy vs Fairness:** If the AI is accurate that these patients often miss appointments (maybe due to transportation or work challenges), is it acceptable to flag them? Should accuracy trump the potential stigma?
+
+**Unintended Consequences:** The hospital wanted to help patients not miss appointments (a good intent), but instead some staff began treating certain patients differently (a bad outcome). How should the hospital address this unintended effect?
+
+**Transparency:** Should patients know an AI has labeled them "high risk" for missing appointments? What might be the impact if they know (or if they don't)?
+
+After discussing, summarize your group's thoughts on how to balance helping patients with fairness and respect:
+
+[[_________________________________________]]
+
+## 🎓 Synthesis Activity
+
+### Create Your Own Ethical Guidelines
+
+In your groups, draft 5 principles for using AI ethically in your school or community. They can draw from UNESCO's principles but make them specific to your context.
+
+For example, a principle about bias might be "Our school's AI systems will be regularly audited for fairness across students of different backgrounds."
+
+1. [[___________________________________]]
+2. [[___________________________________]]
+3. [[___________________________________]]
+4. [[___________________________________]]
+5. [[___________________________________]]
+
+Be prepared to share your principles. This is your chance to translate what you've learned into actionable guidelines!
+
+## 📚 Resources for Deeper Learning
+
+* **UNESCO (2021) Recommendation on AI Ethics:** Global agreement on ethical AI principles
+  * 🔗 [unesco.org – AI Ethics Recommendation](https://www.unesco.org/en/artificial-intelligence/recommendation-ethics)
+
+* **AI Ethics Case Studies Database:** Real-world examples of AI ethical dilemmas and outcomes
+
+* **Interactive Tool – Ethical Dilemmas:** Practice ethical decision-making with AI scenarios
+
+## ✅ Session Reflection
+
+### Most Challenging Dilemma
+
+What scenario or question in this session was hardest for you to decide on? Why?
+
+[[_________________________________________]]
+
+### Personal Takeaway
+
+How will these ethical considerations change how you think about or use AI in your daily life (or future classroom)?
+
+[[_________________________________________]]
+
+# 🎯 Mini Project: Build Your Own AI
+
+Now that you've learned the foundations, it's time to apply your knowledge in a capstone project!
+
+Choose ONE of the following project options (individual or small groups):
+
+## Option 1: Custom Image Classifier
+
+**Goal:** Train an AI to recognize three categories of your choice (e.g., types of leaves, letters, or moods)
+
+**Tool:** Teachable Machine or another simple ML platform
+
+**Deliverable:** A short demo of your classifier in action (e.g., a video or live presentation) and a brief report on its accuracy and where it fails
+
+## Option 2: AI Bias Audit
+
+**Goal:** Investigate an AI tool or app that you or your school uses. (For example, a plagiarism checker, a recommendation system, or even a social media app.)
+
+**Steps:** Test it with diverse inputs to identify any obvious biases or errors. Document your findings.
+
+**Deliverable:** A report or poster showing the tool's purpose, potential biases found, and suggestions for improvement or safe use
+
+## Option 3: AI Ethics Policy for School
+
+**Goal:** Draft a set of guidelines or an ethics policy for how AI should (or shouldn't) be used in your school (or future classroom)
+
+**Content:** Include guidelines on data privacy, fairness, transparency, and teacher/student training. Use examples (from the course or your imagination) to illustrate each guideline.
+
+**Deliverable:** A written policy (1-2 pages) or presentation to the class
+
+> You will have time in Session 11 to work on these projects and then share your results in Session 12.
+
+# 🌟 Final Reflection
+
+Take a moment to reflect on your learning journey in this course.
+
+## What Did You Learn?
+
+### Knowledge Check (mark all that apply)
+
+- [( )] I can explain how AI learns from data (in my own words)
+- [( )] I understand the roles of data, algorithms, models, and weights in AI
+- [( )] I can name and describe at least 3 applications of AI in daily life
+- [( )] I can identify different types of AI (symbolic, predictive, generative)
+
+### Critical Thinking
+
+- [( )] I can recognize potential bias in an AI system's outcomes
+- [( )] I feel confident asking about the ethics of an AI tool (who made it, what data it uses, etc.)
+- [( )] I can discuss how AI might impact society, including education, in both positive and negative ways
+
+### Practical Skills
+
+- [( )] I have hands-on experience training a simple AI model
+- [( )] I know how to test an AI model and interpret its accuracy or errors
+- [( )] I can suggest basic ways to improve an AI (like adding more data or adjusting parameters)
+
+*(If any boxes remain unchecked, that's okay – these are areas to continue exploring!)*
+
+# 🚀 Next Steps: Continuing Your AI Journey
+
+Learning about AI is an ongoing process. Here are some resources and ideas to continue building your AI knowledge and skills:
+
+## 📚 Recommended Courses & Tutorials (free)
+
+* **Elements of AI:** An excellent free online course for beginners
+  * 🔗 [elementsofai.com](https://www.elementsofai.com) (University of Helsinki)
+
+* **AI4K12 Resources:** AI curriculum materials designed for K-12 (great for future teachers!)
+  * 🔗 [ai4k12.org](https://ai4k12.org)
+
+* **Code.org AI Curriculum:** Hands-on activities introducing AI concepts through coding and unplugged exercises
+  * 🔗 [code.org/ai](https://code.org/ai)
+
+## 🔧 Interactive Tools to Practice
+
+* **Teachable Machine:** Continue creating projects (image, sound, pose) – share with friends or students
+
+* **ML5.js Playground:** A friendly JavaScript library to play with machine learning in the browser
+  * 🔗 [ml5js.org](https://ml5js.org)
+
+* **Google Quick, Draw!:** A game where you draw objects and an AI tries to guess – shows how AI interprets sketches
+  * 🔗 [quickdraw.withgoogle.com](https://quickdraw.withgoogle.com)
+
+## 🤝 Stay Informed & Ethical
+
+* **UNESCO AI & Education Initiatives:** Follow UNESCO's work on AI in education policy and teacher training
+  * 🔗 [unesco.org/artificial-intelligence](https://www.unesco.org/en/artificial-intelligence)
+
+* **AI Ethics Lab:** Read about latest discussions on AI ethics in society
+
+* **Join Communities:** Consider joining online forums or local meetups about AI in education to share experiences with other educators
+
+## 💬 Course Feedback
+
+Your feedback helps improve this course for future learners!
+
+**What worked well in this course?** (Which activities or explanations were most helpful?)
+
+[[_________________________________________]]
+
+**What could be improved?** (What was confusing or could be better?)
+
+[[_________________________________________]]
+
+**What would you like to learn next about AI or technology?**
+
+[[_________________________________________]]
+
+*(E.g., more programming, advanced AI topics, AI for specific subjects, etc.)*
+
+# 🎓 Certificate of Completion
+
+**Congratulations!** You've completed AI Foundations. 🎉
+
+As pre-service teachers and informed citizens, you are now equipped to:
+
+* ✅ Understand core AI concepts and how machines learn
+* ✅ Build and experiment with simple AI models
+* ✅ Identify bias and ethical issues in AI systems
+* ✅ Critically evaluate AI tools used in education and daily life
+* ✅ Continue learning about AI to stay current in this fast-moving field
+
+Take pride in this accomplishment. AI literacy is a key 21st-century skill, and you are now prepared to help shape how AI is understood and used in your future classroom and community.
+
+## Next Steps
+
+Consider how you can share your new knowledge:
+
+* Teach a mini-lesson about AI to your peers or future students
+* Incorporate an AI demo or discussion in a lesson plan
+* Advocate for ethical and fair use of AI in your school
+
+> **Remember,** the best way to learn is to teach. You can be a leader in promoting AI literacy!
+
+# 📖 Additional Materials
+
+## Glossary of Key Terms
+
+**Algorithm**
+: A step-by-step procedure or set of rules for solving a problem. In AI, algorithms (like neural network training algorithms) enable machines to learn from data.
+
+**Bias (AI Bias)**
+: A tendency of an AI system to produce prejudiced results due to prejudices in the training data or design. For example, an AI might be biased if it performs worse for certain groups of people (gender, ethnicity, etc.).
+
+**Deep Learning**
+: A subset of machine learning using multi-layered neural networks that can automatically learn representations from data (e.g., recognizing images or understanding language).
+
+**Machine Learning**
+: A field of AI where algorithms learn from data to improve their performance on a task, rather than following explicit instructions.
+
+**Model**
+: The result of training an AI algorithm on data – it's the learned system that can make predictions or decisions (e.g., a model that recognizes handwriting).
+
+**Neural Network**
+: An AI model inspired by the human brain's network of neurons. It consists of layers of interconnected nodes (neurons) with weights that are adjusted during learning.
+
+**Training Data**
+: The examples and associated answers used to teach an AI. For instance, thousands of labeled images used to train a vision model. High-quality, representative training data is crucial for good AI performance.
+
+**Weights**
+: The adjustable parameters within a neural network that determine how input signals are combined. During training, the learning algorithm tweaks the weights to reduce errors.
+
+## References (APA Style)
+
+**Buolamwini, J., & Gebru, T. (2018).** Gender Shades: Intersectional accuracy disparities in commercial gender classification. *Proceedings of Machine Learning Research, 81*(1), 1–15.
+
+> Study highlighting bias in facial recognition performance across different genders and skin tones.
+
+**Dastin, J. (2018, October 11).** Amazon scraps secret AI recruiting tool that showed bias against women. *Reuters*. Retrieved from https://www.reuters.com/
+
+> News report on Amazon's biased hiring algorithm and its consequences.
+
+**Miao, F., Holmes, W., Huang, R., & Zhang, H. (2021).** AI and education: Guidance for policy-makers. Paris: UNESCO.
+
+> UNESCO report outlining how to leverage AI in education while addressing risks and preparing stakeholders.
+
+**Miao, F., & Cukurova, M. (2024).** AI Competency Framework for Teachers. Paris: UNESCO.
+
+> Defines the knowledge, skills, and values teachers need to harness AI in education.
+
+**Noble, S. U. (2018).** Algorithms of oppression: How search engines reinforce racism. New York, NY: NYU Press.
+
+> Book examining racial biases in search engine results and their societal impact.
+
+**O'Neil, C. (2016).** Weapons of Math Destruction: How big data increases inequality and threatens democracy. New York, NY: Crown.
+
+> Book exploring how algorithms can perpetuate inequality in domains like finance, policing, and education.
+
+**UNESCO. (2021).** Recommendation on the Ethics of Artificial Intelligence. Paris: UNESCO.
+
+> Global agreement adopted by 193 Member States, outlining ethical principles for AI development and use.
+
+---
+
+**End of Course**
+
+Thank you for your participation and dedication to understanding AI! 🎓✨
