@@ -510,10 +510,10 @@ What biases can you identify in this AI system? List at least 3.
 
 Where did these biases originate from?
 
-[( )] The algorithm was explicitly programmed to prefer men
-[(X)] The training data reflected past discrimination
-[( )] The AI spontaneously developed biases on its own
-[(X)] Human decisions in the past (who got hired) were biased, and the AI learned that pattern
+[[ ]] The algorithm was explicitly programmed to prefer men
+[[x]]The training data reflected past discrimination
+[[ ]]The AI spontaneously developed biases on its own
+[[x]]Human decisions in the past (who got hired) were biased, and the AI learned that pattern
 
 ## 🛠️ Bias Mitigation Exercise
 
